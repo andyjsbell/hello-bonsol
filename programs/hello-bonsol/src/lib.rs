@@ -20,7 +20,8 @@ pub enum WelcomeError {
 
 #[program]
 pub mod hello_bonsol {
-    use bonsol_anchor_interface::callback::handle_callback;
+    use anchor_lang::solana_program::keccak;
+    use bonsol_anchor_interface::{callback::handle_callback, instructions::InputRef};
 
     use super::*;
 
@@ -28,7 +29,7 @@ pub mod hello_bonsol {
         Ok(())
     }
 
-    pub fn welcome(ctx: Context<Welcome>, request_id: String) -> Result<()> {
+    pub fn welcome(ctx: Context<Welcome>, request_id: String, guess: u8) -> Result<()> {
         msg!("Hello, world!");
         let requester = ctx.accounts.initiator.key();
         let payer = ctx.accounts.initiator.key();
@@ -36,6 +37,7 @@ pub mod hello_bonsol {
         let deployment_account = &ctx.accounts.deployment_account.key();
         let tip = 0;
         let expire = 0;
+        let input_hash = keccak::hashv(&[&[guess]]);
         ctx.accounts.welcome_log.current_execution_account = Some(*execution_account);
         execute_v1_with_accounts(
             &requester,
@@ -44,12 +46,12 @@ pub mod hello_bonsol {
             deployment_account,
             WELCOME_IMAGE_ID,
             &request_id,
-            vec![], // Input items for program
+            vec![InputRef::public(&[guess])], // Input items for program
             tip,
             expire,
             ExecutionConfig {
                 verify_input_hash: true,
-                input_hash: None, // Hash of input items for program, keccak256
+                input_hash: Some(&input_hash.to_bytes()), // Hash of input items for program, keccak256
                 forward_output: true,
             },
             Some(CallbackConfig {
