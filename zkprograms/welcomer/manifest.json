@@ -1,0 +1,10 @@
+{
+  "name": "welcomer",
+  "binaryPath": "zkprograms/welcomer/target/riscv-guest/riscv32im-risc0-zkvm-elf/docker/welcomer/welcomer",
+  "imageId": "a6c375eb8ad1dea5ced1eb999c3c3f465b739b6683b2ca48df4c9a9834ff93f7",
+  "inputOrder": [
+    "Public"
+  ],
+  "signature": "5bGQDrC4RvjTTs6ciSt5AaF4Wstaw3v6j2jp8ybQSo4qyEm7zkrugFqWpxxvWu96ExytKJPHxaqgLd6fvMGUFuJX",
+  "size": 116744
+}
