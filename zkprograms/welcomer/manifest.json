@@ -1,6 +1,6 @@
 {
   "name": "welcomer",
-  "binaryPath": "zkprograms/welcomer/target/riscv-guest/riscv32im-risc0-zkvm-elf/docker/welcomer/welcomer",
+  "binaryPath": "./zkprograms/welcomer/target/riscv-guest/riscv32im-risc0-zkvm-elf/docker/welcomer/welcomer",
   "imageId": "a6c375eb8ad1dea5ced1eb999c3c3f465b739b6683b2ca48df4c9a9834ff93f7",
   "inputOrder": [
     "Public"

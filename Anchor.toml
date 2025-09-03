@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-hello_bonsol = "5aPccZnJ5XkqkEkSn55BCLGAMDcns9jqkapvzV1wagJw"
+hello_bonsol = "4PAptfatXKk8ctGCJhrq6hbcujmASkYnG5BpshioRaug"
 
 [registry]
 url = "https://api.apr.dev"

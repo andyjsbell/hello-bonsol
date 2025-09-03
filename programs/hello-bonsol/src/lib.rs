@@ -4,9 +4,9 @@ use bonsol_anchor_interface::instructions::{
 };
 use bonsol_anchor_interface::{DeployV1Account, ExecutionRequestV1Account};
 
-declare_id!("5aPccZnJ5XkqkEkSn55BCLGAMDcns9jqkapvzV1wagJw");
+declare_id!("4PAptfatXKk8ctGCJhrq6hbcujmASkYnG5BpshioRaug");
 
-const WELCOME_IMAGE_ID: &str = "";
+const WELCOME_IMAGE_ID: &str = "a6c375eb8ad1dea5ced1eb999c3c3f465b739b6683b2ca48df4c9a9834ff93f7";
 
 #[error_code]
 pub enum WelcomeError {
